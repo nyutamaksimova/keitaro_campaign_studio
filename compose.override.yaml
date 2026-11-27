@@ -1,0 +1,17 @@
+# Local development: edits on the host are immediately visible in the container.
+services:
+  app:
+    volumes:
+      - ./app:/app/app:ro
+      - ./migrations:/app/migrations:ro
+    environment:
+      WATCHFILES_FORCE_POLLING: "true"
+    command:
+      - sh
+      - -c
+      - >-
+        python -m alembic upgrade head &&
+        python -m uvicorn app.main:create_app --factory --host 0.0.0.0 --port 8000
+        --reload --reload-dir /app/app
+        --reload-include '*.py' --reload-include '*.html'
+        --reload-include '*.css' --reload-include '*.js'

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Редактор кампании #{{ campaign_id }} · Keitaro</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}?v={{ asset_version }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='editor.css') }}?v={{ asset_version }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='editor-changes.css') }}?v={{ asset_version }}">
+  <script src="{{ url_for('static', path='editor.js') }}?v={{ asset_version }}" defer></script>
+</head>
+<body>
+  {% include 'navigation.html' %}
+  <main id="editor" class="editor-main" data-campaign-id="{{ campaign_id }}">
+    <a href="/campaigns" class="back-link">← Все кампании</a>
+    <p class="eyebrow">РЕДАКТОР КАМПАНИИ #{{ campaign_id }}</p>
+    <h1 id="campaign-title">Загрузка кампании…</h1>
+    <div class="campaign-state-row">
+      <span id="campaign-state" class="campaign-state"></span>
+      <button id="campaign-toggle" class="secondary" type="button" disabled>Загрузка состояния…</button>
+    </div>
+    <p class="intro">Правки сохраняются в черновике. Keitaro изменится только после отправки.</p>
+    <div class="editor-toolbar">
+      <button id="publish" class="button-link" disabled>Отправить в Keitaro</button>
+      <button id="discard" class="secondary" disabled>Отменить изменения</button>
+      <button id="refresh-remote" class="secondary" disabled>Обновить из Keitaro</button>
+      <button id="reload-draft" class="secondary">Перезагрузить черновик</button>
+    </div>
+    <p id="draft-status" class="field-help" role="status"></p>
+    <div id="draft-legend" class="draft-legend" hidden aria-label="Подсветка неотправленных изменений">
+      <span class="change-badge change-added">Добавлен / восстановлен</span>
+      <span class="change-badge change-modified">Изменён</span>
+      <span class="change-badge change-removed">Будет убран</span>
+      <span>Изменения ещё не отправлены в Keitaro</span>
+    </div>
+    <div id="editor-message" class="notice" role="status" hidden></div>
+    <div id="remote-changes" class="remote-changes" hidden></div>
+    <section id="editor-conflicts" aria-label="Конфликты изменений" hidden></section>
+    <div id="streams"></div>
+  </main>
+</body>
+</html>

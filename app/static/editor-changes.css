@@ -1,0 +1,14 @@
+.draft-legend{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0 20px;font-size:11px;color:var(--muted)}
+.change-badge{display:inline-block;width:fit-content;padding:4px 8px;border-radius:5px;font-size:10px;font-weight:600;line-height:1.5;margin-top:6px}
+.change-added{background:#dff0e6;color:#216343}.change-modified{background:#fff0cc;color:#825910}.change-removed{background:#f8dfdb;color:#983e32}
+.stream-has-changes{border-color:#d9b967}
+.stream-heading .change-badge{display:table;margin-bottom:8px}
+.stream-offers tr.draft-added{background:#f0faf3}.stream-offers tr.draft-modified{background:#fffaf0}
+.stream-offers tr.draft-added td:first-child{box-shadow:inset 3px 0 #4c9b6d}.stream-offers tr.draft-modified td:first-child{box-shadow:inset 3px 0 #d2a13e}
+.stream-offers tr.external-change.draft-added,.stream-offers tr.external-change.draft-modified{border-bottom:2px solid #a7c5e9}
+.changed-share,.share-input.pending-input{border-color:#c9932c;background:#fff5da;box-shadow:0 0 0 1px #c9932c22}
+.stream-offers tr.pending-input-row{background:#fff7df}
+.previous-share,.input-pending-label{display:block;font-size:10px;color:#856021;margin:5px 0}
+.input-pending-label{font-weight:600}
+.archive-row.draft-removed{background:#fff3f0;border-radius:8px;padding:14px 12px;margin-top:8px;border-bottom-color:#eccac3}
+.archive-row .change-badge{display:block}

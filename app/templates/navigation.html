@@ -1,0 +1,7 @@
+<header class="topbar">
+  <a class="brand" href="/campaigns" aria-label="Кампании"><span class="brand-icon">k.</span> campaign studio</a>
+  <nav class="app-nav" aria-label="Основная навигация">
+    <a href="/campaigns" {% if request.url.path.startswith('/campaigns') %}aria-current="page"{% endif %}>Кампании</a>
+    <a href="/" {% if request.url.path == '/' %}aria-current="page"{% endif %}>Новая кампания</a>
+  </nav>
+</header>

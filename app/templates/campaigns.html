@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кампании · Keitaro</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}?v={{ asset_version }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='editor.css') }}?v={{ asset_version }}">
+  <script src="{{ url_for('static', path='campaigns.js') }}?v={{ asset_version }}" defer></script>
+</head>
+<body>
+  {% include 'navigation.html' %}
+  <main class="editor-main">
+    <p class="eyebrow">УПРАВЛЕНИЕ ТРАФИКОМ</p>
+    <div class="page-title-row"><div><h1>Кампании</h1><p class="intro">Выберите кампанию для её редактирования.</p></div><a class="button-link" href="/">+ Новая кампания</a></div>
+    <label for="campaign-search">Поиск кампании</label>
+    <input id="campaign-search" type="search" placeholder="Название или ID кампании" autocomplete="off" maxlength="255">
+    <p id="campaign-list-status" class="field-help" role="status"></p>
+    <div id="campaign-list" class="campaign-grid" aria-live="polite"></div>
+    <div class="pagination"><button id="previous-page" class="secondary" disabled>← Назад</button><span id="page-number"></span><button id="next-page" class="secondary" disabled>Далее →</button><button id="refresh-list" class="secondary">Обновить список</button></div>
+  </main>
+</body>
+</html>
